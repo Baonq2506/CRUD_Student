@@ -1,0 +1,23 @@
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="Create new student" (click)="goBack()" >Back</button>
+    </div>
+    <div *ngIf="student">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">ID :  <span>{{student.id}}</span></label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name :  <span>{{student.name}}</span></label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Age :  <span>{{student.name}}</span></label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Address :    <span>{{student.address}}</span></label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone :  <span>{{student.phone}}</span></label>
+        </div>
+        <br>
+    </div>
+</section>

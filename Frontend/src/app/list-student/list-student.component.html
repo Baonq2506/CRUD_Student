@@ -1,0 +1,44 @@
+
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="Create new student" routerLink="student/create" >Create</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let student of students">
+            <th scope="row">{{student.id}}</th>
+            <td>{{student.name}}</td>
+            <td *ngIf="student.profile.gender">{{student.profile.gender}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.phone}}</td>
+            <td>
+                <button mat-mini-fab mat-raised-button  style="background:rgb(38, 124, 190);color:white" aria-label="Show"  matTooltip="Show" routerLink="/student/show/{{student.id}}">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                &NegativeThinSpace;
+                <button mat-mini-fab style="background:rgb(30, 247, 186);color:white"  aria-label="Edit" matTooltip="Edit" routerLink="/student/edit/{{student.id}}" >
+                    <mat-icon>edit</mat-icon>
+                </button>
+                &NegativeThinSpace;
+                <button mat-mini-fab style="background:rgb(223, 20, 20);color:white"  aria-label="Delete" matTooltip="Delete" (click)="delete(student.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
