@@ -1,0 +1,30 @@
+
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="Create new student" (click)="goBack()" >Back</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Class</th>
+            <th scope="col">S_ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cr of classRoom.student">
+            <th scope="row">{{classRoom.id}}</th>
+            <td>{{classRoom.name}}</td>
+            <td>{{cr.id}}</td>
+            <td>{{cr.name}}</td>
+            <td>{{cr.phone}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+</section>
+

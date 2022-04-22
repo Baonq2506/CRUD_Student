@@ -31,4 +31,8 @@ export class StudentService {
         return this.httpClient.put(this.apiUrl+"student/"+id,student);
     }
 
+    getSubjectStudent(id :string): Observable<Student>{
+        return this.httpClient.get<Student>(this.apiUrl+"student/subject/"+id);
+    }
+
 }

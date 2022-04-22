@@ -2,6 +2,10 @@
 <section class="container">
     <div class="top-bar">
         <button mat-raised-button color="primary" matTooltip="Create new student" routerLink="student/create" >Create</button>
+        &NegativeThinSpace;
+        <button mat-raised-button color="primary" matTooltip="List Class" routerLink="class/" >Class</button>
+        &NegativeThinSpace;
+        <button mat-raised-button color="primary" matTooltip="List Subject" routerLink="subject/" >Subject</button>
     </div>
 
     <table class="table">
@@ -36,7 +40,10 @@
                 <button mat-mini-fab style="background:rgb(223, 20, 20);color:white"  aria-label="Delete" matTooltip="Delete" (click)="delete(student.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
-
+                &NegativeThinSpace;
+                <button mat-mini-fab mat-raised-button  style="background:rgb(38, 124, 190);color:white" aria-label="Show"  matTooltip="Show Subject" routerLink="/student/subject/{{student.id}}">
+                    <mat-icon>visibility</mat-icon>
+                </button>
             </td>
         </tr>
         </tbody>

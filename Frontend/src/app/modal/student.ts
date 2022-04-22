@@ -1,4 +1,5 @@
 import {Profile } from '../modal/profile';
+import { Subject } from './Subject';
 
 export class Student {
         public id: string;
@@ -8,5 +9,6 @@ export class Student {
         public phone: string;
         public image: File;
         public profile: Profile;
-
+        public class_id: string;
+        public subjects : Subject[];
 }

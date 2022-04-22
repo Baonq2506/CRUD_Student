@@ -5,6 +5,11 @@ import {ListStudentComponent} from './list-student/list-student.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ShowStudentComponent } from './show-student/show-student.component';
+import { RoomStudentComponent } from './room-student/room-student.component';
+import { ShowRoomComponent } from './show-room/show-room.component';
+import { SubjectStudentComponent } from './subject-student/subject-student.component';
+import { SubjectListComponent } from './subject-list/subject-list.component';
+import { SubjectShowComponent } from './subject-show/subject-show.component';
 
 
 const routes: Routes = [
@@ -12,9 +17,11 @@ const routes: Routes = [
   { path: 'student/create', component:CreateStudentComponent},
   { path: 'student/edit/:id', component:EditStudentComponent},
   { path: 'student/show/:id', component:ShowStudentComponent},
-
-
-
+  { path: 'class', component:RoomStudentComponent},
+  { path: 'class/show/:id', component:ShowRoomComponent},
+  { path: 'student/subject/:id', component:SubjectStudentComponent},
+  { path: 'subject', component:SubjectListComponent},
+  { path: 'subject/show/:id', component:SubjectShowComponent},
 ];
 
 @NgModule({

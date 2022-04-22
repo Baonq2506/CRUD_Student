@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -40,8 +41,7 @@ public class StudentService {
         studentRepository.delete(id);
     }
 
-    public Set<ClassRoom> getStudentClass(){
-        Set<ClassRoom> sr = new HashSet<ClassRoom>(studentRepository.getStudentClass());
-        return sr;
+    public Student getStudentSubject(String id){
+        return studentRepository.getStudentSubject(id);
     }
 }

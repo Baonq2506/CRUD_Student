@@ -1,0 +1,24 @@
+
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="Create new student" (click)="goBack()">Back</button>
+        &NegativeThinSpace;
+
+    </div>
+    ID: {{student.id}} <br>
+    Name: {{student.name}}
+    <table class="table">
+        <thead>
+        <tr >
+            <th scope="col">ID Subject</th>
+            <th scope="col">Subject</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ss of student.subjects">
+            <td>{{ss.id}}</td>
+            <td >{{ss.name}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

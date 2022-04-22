@@ -21,6 +21,11 @@ import { ShowStudentComponent } from './show-student/show-student.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule } from '@angular/forms';
+import { RoomStudentComponent } from './room-student/room-student.component';
+import { ShowRoomComponent } from './show-room/show-room.component';
+import { SubjectStudentComponent } from './subject-student/subject-student.component';
+import { SubjectListComponent } from './subject-list/subject-list.component';
+import { SubjectShowComponent } from './subject-show/subject-show.component';
 
 
 
@@ -31,6 +36,11 @@ import {FormsModule } from '@angular/forms';
     CreateStudentComponent,
     EditStudentComponent,
     ShowStudentComponent,
+    RoomStudentComponent,
+    ShowRoomComponent,
+    SubjectStudentComponent,
+    SubjectListComponent,
+    SubjectShowComponent,
 
 
 

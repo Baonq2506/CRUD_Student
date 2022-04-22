@@ -1,0 +1,29 @@
+
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="List student" routerLink="" >Student</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Class</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor=" let cr of classRooms">
+            <th scope="row">{{ cr.id }}</th>
+            <td>{{ cr.name }}</td>
+            <td>
+                <button mat-mini-fab mat-raised-button  style="background:rgb(38, 124, 190);color:white" aria-label="Show"  matTooltip="Show" routerLink="/class/show/{{cr.id}}">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                &NegativeThinSpace;
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+

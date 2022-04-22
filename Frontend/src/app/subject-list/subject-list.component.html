@@ -1,0 +1,32 @@
+
+<section class="container">
+    <div class="top-bar">
+
+        <button mat-raised-button color="primary" matTooltip="Create new student" routerLink="" >Student</button>
+        &NegativeThinSpace;
+        <button mat-raised-button color="primary" matTooltip="List Class" routerLink="/class" >Class</button>
+
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let subject of subjects">
+            <th scope="row">{{subject.id }}</th>
+            <td>{{subject.name}}</td>
+            <td>
+                <button mat-mini-fab mat-raised-button  style="background:rgb(38, 124, 190);color:white" aria-label="Show"  matTooltip="Show Student in Subject" routerLink="/subject/show/{{subject.id}}">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>

@@ -3,6 +3,7 @@ package com.example.test.Repository;
 import com.example.test.Model.ClassRoom;
 import com.example.test.Model.Profile;
 import com.example.test.Model.Student;
+import com.example.test.Model.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -77,31 +78,34 @@ public class StudentRepository {
                 student.getPhone(),id);
     }
 
-    public List<ClassRoom> getStudentClass(){
-
-        String sql ="SELECT s.*,cr.name AS class_name,cr.id as class_id_c FROM CLASS_ROOM cr " +
-                "INNER JOIN Student s ON s.class_id = cr.id ORDER BY cr.id asc";
-        return jdbc.query(sql, new RowMapper<ClassRoom>() {
+    public Student getStudentSubject(String id){
+        String sql= "SELECT st.name,st.id,s.id as subject_id,s.name as subject_name FROM student st\n" +
+                "INNER JOIN STUDENT_SUBJECT ss  ON ss.STUDENT_ID =st.ID \n" +
+                "INNER JOIN SUBJECT s ON s.ID = ss.SUBJECT_ID \n" +
+                "WHERE st.id =?";
+        return jdbc.queryForObject(sql, new Object[]{id}, new RowMapper<Student>() {
+            Student s = new Student();
+            Collection<Subject> list = new HashSet<>();
             @Override
-            public ClassRoom mapRow(ResultSet rs, int rowNum) throws SQLException {
-                ClassRoom cr = new ClassRoom();
-                cr.setId(rs.getInt("class_id_c"));
-                cr.setName(rs.getString("class_name"));
-
-                Set<Student> list = new HashSet<>();
-
-                Student st = new Student();
-                st.setId(rs.getInt("id"));
-                st.setName(rs.getString("name"));
-                st.setClass_id(rs.getInt("class_id"));
-
-                list.add(st);
-
-                cr.setStudent(list);
-
-                return cr;
+            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+                s.setName(rs.getString("name"));
+                s.setId(rs.getInt("id"));
+                Subject sj = new Subject();
+                sj.setName(rs.getString("subject_name"));
+                sj.setId(rs.getInt("subject_id"));
+                list.add(sj);
+                while(rs.next()){
+                    Subject sj2 = new Subject();
+                    sj2.setName(rs.getString("subject_name"));
+                    sj2.setId(rs.getInt("subject_id"));
+                    list.add(sj2);
+                }
+                s.setSubjects(list);
+                return s;
             }
         });
     }
+
+
 }
 

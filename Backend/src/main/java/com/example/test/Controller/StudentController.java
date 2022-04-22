@@ -53,9 +53,10 @@ public class StudentController {
         studentService.updateStudent(id,student);
     }
 
-    @GetMapping("/class")
-    public Set<ClassRoom> getStudentClass(){
-        return  studentService.getStudentClass();
+    @GetMapping("/student/subject/{id}")
+    public  Student getStudentSubject(@PathVariable( value = "id") String id){
+        return studentService.getStudentSubject(id);
     }
+
 
 }
