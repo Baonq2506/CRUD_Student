@@ -1,5 +1,6 @@
 package com.example.test.Service;
 
+import com.example.test.Exception.GlobalExceptionHandler;
 import com.example.test.Model.ClassRoom;
 import com.example.test.Model.Student;
 import com.example.test.Repository.StudentRepository;
@@ -22,7 +23,7 @@ public class StudentService {
 
 
     public Student getStudentByID(String userId){
-        return studentRepository.getStudent(userId);
+        return studentRepository.getStudent(userId) ;
     };
 
     public void create(Student student){

@@ -1,5 +1,6 @@
 package com.example.test.Controller;
 
+import com.example.test.Exception.GlobalExceptionHandler;
 import com.example.test.Model.ClassRoom;
 import com.example.test.Service.StudentService;
 import com.example.test.Model.Student;
@@ -35,6 +36,7 @@ public class StudentController {
     @GetMapping("student/{id}")
     public Student getStudent(@PathVariable(value = "id") String  id ){
         return  studentService.getStudentByID(id);
+
     }
 
     @PostMapping("student")

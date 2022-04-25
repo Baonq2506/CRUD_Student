@@ -29,9 +29,10 @@
         </div>
         <br>
         <div class="form-group">
-            <input type="file" [(ngModel)] = "student.image" name = "image" (change)="onFileChange($event)">
+            <input type="file" [(ngModel)] = "student.image" name = "image" (change)="onFileChange($event)"> <br>
             <img [src]="imgURL" height="200px" *ngIf="imgURL">
         </div>
+
         <br>
         <button class = "btn btn-success" type ="submit">Create</button>
 

@@ -26,11 +26,13 @@ import { ShowRoomComponent } from './show-room/show-room.component';
 import { SubjectStudentComponent } from './subject-student/subject-student.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { SubjectShowComponent } from './subject-show/subject-show.component';
+import { ImageComponent } from './image/image.component';
+
 
 
 
 @NgModule({
-  declarations: [
+declarations: [
     AppComponent,
     ListStudentComponent,
     CreateStudentComponent,
@@ -41,11 +43,10 @@ import { SubjectShowComponent } from './subject-show/subject-show.component';
     SubjectStudentComponent,
     SubjectListComponent,
     SubjectShowComponent,
+    ImageComponent,
 
-
-
-  ],
-  imports: [
+],
+imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -58,8 +59,8 @@ import { SubjectShowComponent } from './subject-show/subject-show.component';
     FormsModule,
     HttpClientModule
 
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+],
+providers: [],
+bootstrap: [AppComponent]
 })
 export class AppModule { }

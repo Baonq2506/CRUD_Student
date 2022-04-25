@@ -4,6 +4,8 @@ import { StudentService } from '../services/student.service';
 import { Router } from '@angular/router';
 import { Student} from '../modal/student';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -12,6 +14,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-student.component.css']
 })
 export class CreateStudentComponent implements OnInit {
+
     student : Student = new Student();
     imgURL:any;
     myForm = new FormGroup({
@@ -34,16 +37,17 @@ export class CreateStudentComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
+
     saveStudent(){
         this.studentService.create(this.student).subscribe(data => {
             console.log(data);
             this.goToStudentList();
         });
     }
+
     goToStudentList(){
         this.route.navigate(['']);
     }
-
 
     onSubmit(){
         this.saveStudent();
@@ -52,16 +56,14 @@ export class CreateStudentComponent implements OnInit {
     onFileChange(event:any) {
         const reader = new FileReader();
         if(event.target.files && event.target.files.length) {
-        const [file] = event.target.files;
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            this.imgURL = reader.result as string;
-            this.myForm.patchValue({
-            fileSource: reader.result
-            });
-
-        };
-
+            const [file] = event.target.files;
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                this.imgURL = reader.result as string;
+                this.myForm.patchValue({
+                fileSource: reader.result
+                });
+            };
         }
     }
 

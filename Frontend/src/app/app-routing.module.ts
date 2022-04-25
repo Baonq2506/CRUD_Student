@@ -10,6 +10,7 @@ import { ShowRoomComponent } from './show-room/show-room.component';
 import { SubjectStudentComponent } from './subject-student/subject-student.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { SubjectShowComponent } from './subject-show/subject-show.component';
+import { ImageComponent } from './image/image.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'student/subject/:id', component:SubjectStudentComponent},
   { path: 'subject', component:SubjectListComponent},
   { path: 'subject/show/:id', component:SubjectShowComponent},
+  { path: 'image', component:ImageComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,32 @@
+
+<section class="container">
+    <div class="top-bar">
+        <button mat-raised-button color="primary" matTooltip="Create new student" (click)="goBack()" >Back</button>
+        &NegativeThinSpace;
+        <button mat-raised-button color="primary" matTooltip="List Class" routerLink="class/" >Class</button>
+        &NegativeThinSpace;
+        <button mat-raised-button color="primary" matTooltip="List Subject" routerLink="subject/" >Subject</button>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let img of images">
+            <th scope="row">{{img.id}}</th>
+            <td>{{img.name}}</td>
+            <td>{{img.type}}</td>
+            <td>
+                <img src="data:image/jpeg;base64,{{img.data}}" width=200px alt="">
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</section>
