@@ -10,15 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.http.ResponseEntity.BodyBuilder;
 
-import java.io.ByteArrayOutputStream;
+
+
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.zip.DataFormatException;
-import java.util.zip.Deflater;
-import java.util.zip.Inflater;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")

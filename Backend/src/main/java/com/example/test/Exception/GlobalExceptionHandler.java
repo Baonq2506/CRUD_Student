@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NullPointerException.class)
     public String nullPointer (Exception e){
         e.printStackTrace();
-        return "null-pointer";
+        return "Loi value null";
     }
 
     @ExceptionHandler(ArithmeticException.class)
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     public String sqlPointer (Exception e){
         LOGGER.info(String.valueOf(e));
         e.printStackTrace();
-        return "Loi cau lenh sql";
+        return "Loi cau thuc thi  sql";
     }
 
 
